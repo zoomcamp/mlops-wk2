@@ -1,0 +1,97 @@
+# cat ~/.ssh/id_rsa.pub | ssh user@mlops-zoomcamp 'cat >> ~/.ssh/authorized_keys
+
+# ssh -v ubuntu@mlops-zoomcamp
+
+# identity file /C/Users/obalo/Downloads/wk1zoomcampmlops.pem
+
+
+# /c/Users/obalo/.ssh/config -- wrong
+
+SOLUTION for PORT FOWARDG is here: https://medium.com/@dminhk/how-to-connect-amazon-ec2-using-ssh-local-port-forwarding-fa45a6291d9
+
+# ssh -L <LOCAL_PORT>:<REMOTE_HOST>:<REMOTE_PORT> <GATEWAY>
+
+ssh -L <LOCAL_PORT>:<REMOTE_HOST>:<REMOTE_PORT> <GATEWAY>
+
+ssh -i "wk1zoomcampmlops.pem" -N -L 8888: localhost:8888 ubuntu@ec2-67-202-28-236.compute-1.amazonaws.com
+
+
+# Enabling Auto-completion in jupyter notebook
+!pip install --upgrade jedi==0.17.2
+
+
+RDS
+Master username
+mlflow
+Master password
+ftoIub4NRPtMOqOLQd8q
+
+
+master username: mlflow
+password: ftoIub4NRPtMOqOLQd8q 
+initial database name: mlflow_db
+endpoint: mlflow-backend-db.c38gsi8uwb4z.us-east-1.rds.amazonaws.com
+
+-----------||----------------
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+
+
+
+
+nano ~/.ssh/config
+
+Host gcp-mlops_demo
+    HostName 35.196.19.116 # VM Public IP
+    User mlops_zoomcamp # VM user
+    IdentityFile ~/.ssh/mlops-demo # Private SSH key file
+    StrictHostKeyChecking no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+============================||=============================================
+(base) ubuntu@ip-172-31-18-15:~$ history
+    1  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    2  wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+    3  bash Anaconda3-2024.10-1-Linux-x86_64.sh
+    4  which python
+    5  which python3
+    6  exit
+    7  ssh -v ubuntu@mlops-zoomcamp
+    8  cat /etc/ssh/sshd_config
+    9  nano /etc/ssh/sshd_config
+   10  vi /etc/ssh/sshd_config
+   11  jupyter notebook --port=8899 --no-browser
+   12  cat ~/.ssh/authorized_keys
+   13  nano ~/.ssh/authorized_keys
+Here is what works........# I used 8890:
+   14  ssh-i "wk1zoomcampmlops.pem" -N -L 8888: localhost:888 ubuntu@ec2-67-202-28-236.compute-1.amazonaws.com  
+   15  ssh -i "wk1zoomcampmlops.pem" -N -L 8888: localhost:888 ubuntu@ec2-67-202-28-236.compute-1.amazonaws.com
+   16  jupyter lab --notebook-dir=/home/ubuntu
+   17  history
+=================================||========================================
+(base) ubuntu@ip-172-31-18-15:~$ history
+    1  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    2  wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+    3  bash Anaconda3-2024.10-1-Linux-x86_64.sh
+    4  which python
+    5  which python3
+    6  exit
+    7  ping 67.202.28.236
+    8  jupyter notebook --port=8899 --no-browser
+    9  jupyter server list
+   10  history
+

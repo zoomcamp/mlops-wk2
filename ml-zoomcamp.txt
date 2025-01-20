@@ -1,0 +1,27 @@
+KINESIS_STREAM_OUTPUT='ride_predictions'
+SHARD='shardId-000000000000'
+
+SHARD_ITERATOR=$(aws kinesis get-shard-iterator --shard-id ${SHARD} --shard-iterator-type TRIM_HORIZON --stream-name ${KINESIS_STREAM_OUTPUT} --query 'ShardIterator') RESULT=$(aws kinesis get-records --shard-iterator $SHARD_ITERATOR) echo ${RESULT} | jq -r '.Records[0].Data' | base64 --decode
+
+
+
+zoomcamp-ml wk01 to 02
+-----------------------------
+
+https://github.com/ayoub-berdeddouch/mlbookcamp-homeworks.git
+
+https://github.com/jxareas/ml-zoomcamp-2022.git
+https://github.com/MemoonaTahira/MLZoomcamp2022.git
+https://github.com/wgb-10/ML-Zoomcamp-2022.git
+
+
+echo "# shashank" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ml-handson/shashank.git
+git push -u origin main
+
+
+git pull origin main --allow-unrelated-histories
